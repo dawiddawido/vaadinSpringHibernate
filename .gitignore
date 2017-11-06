@@ -109,3 +109,8 @@ core/src/main/resources/
 core/src/test/
 persistence/src/test/
 web/src/test/
+core/src/main/java/repositories/
+web/src/main/webapp/VAADIN/widgetsets/
+
+# Intellij
+*.iml
