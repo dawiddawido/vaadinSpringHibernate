@@ -13,17 +13,14 @@
         <param-value>/WEB-INF/applicationContext.xml</param-value>
     </context-param>
 
-    <!--<listener>-->
-        <!--<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>-->
-    <!--</listener>-->
+    <listener>
+        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+    </listener>
 
     <servlet>
         <servlet-name>eControl</servlet-name>
-        <!--<servlet-class>com.vaadin.spring.server.SpringVaadinServlet</servlet-class>-->
         <servlet-class>pl.cwik.dawid.ui.dashboard.DashboardServlet</servlet-class>
         <init-param>
-            <!--<param-name>UI</param-name>-->
-            <!--<param-value>pl.cwik.dawid.ui.MainUI</param-value>-->
             <param-name>UI</param-name>
             <param-value>pl.cwik.dawid.ui.dashboard.DashboardUI</param-value>
         </init-param>

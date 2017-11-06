@@ -6,7 +6,9 @@ import com.google.common.eventbus.Subscribe;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Title;
 import com.vaadin.annotations.Widgetset;
+import com.vaadin.spring.annotation.SpringUI;
 import hep.aida.ref.Test;
+import org.springframework.web.context.ContextLoaderListener;
 import pl.cwik.dawid.ui.dashboard.data.DataProvider;
 import pl.cwik.dawid.ui.dashboard.data.dummy.DummyDataProvider;
 import pl.cwik.dawid.ui.dashboard.domain.User;
@@ -25,9 +27,12 @@ import com.vaadin.ui.themes.ValoTheme;
 import pl.cwik.dawid.ui.dashboard.event.DashboardEvent;
 import pl.cwik.dawid.services.TestService;
 
+import javax.servlet.annotation.WebListener;
+
 @Theme("dashboard")
 @Widgetset("pl.cwik.dawid.ui.dashboard.DashboardWidgetSet")
 @Title("QuickTickets Dashboard")
+@SpringUI
 @SuppressWarnings("serial")
 public final class DashboardUI extends UI {
 
@@ -117,5 +122,10 @@ public final class DashboardUI extends UI {
 
     public static DashboardEventBus getDashboardEventbus() {
         return ((DashboardUI) getCurrent()).dashboardEventbus;
+    }
+
+    @WebListener
+    public static class MyContextLoaderListener extends ContextLoaderListener{
+
     }
 }

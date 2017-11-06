@@ -13,9 +13,13 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="core" target="1.8" />
+      <module name="core (1) (es.mhp)" target="1.8" />
       <module name="eControl" target="1.8" />
       <module name="persistence" target="1.8" />
+      <module name="persistence (1) (es.mhp)" target="1.8" />
+      <module name="petshop" target="1.8" />
       <module name="web" target="1.8" />
+      <module name="web (1) (es.mhp)" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
