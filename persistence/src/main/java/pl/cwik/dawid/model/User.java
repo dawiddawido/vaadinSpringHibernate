@@ -1,4 +1,4 @@
-package model;
+package pl.cwik.dawid.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

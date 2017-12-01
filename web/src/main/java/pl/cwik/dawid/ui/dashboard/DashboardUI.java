@@ -8,6 +8,9 @@ import com.vaadin.annotations.Title;
 import com.vaadin.annotations.Widgetset;
 import com.vaadin.spring.annotation.SpringUI;
 import hep.aida.ref.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Required;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.web.context.ContextLoaderListener;
 import pl.cwik.dawid.ui.dashboard.data.DataProvider;
 import pl.cwik.dawid.ui.dashboard.data.dummy.DummyDataProvider;
@@ -26,6 +29,7 @@ import com.vaadin.ui.Window;
 import com.vaadin.ui.themes.ValoTheme;
 import pl.cwik.dawid.ui.dashboard.event.DashboardEvent;
 import pl.cwik.dawid.services.TestService;
+import pl.cwik.dawid.ui.testProvider.TestProvider;
 
 import javax.servlet.annotation.WebListener;
 
@@ -45,6 +49,13 @@ public final class DashboardUI extends UI {
     private final DataProvider dataProvider = new DummyDataProvider();
     private final DashboardEventBus dashboardEventbus = new DashboardEventBus();
 
+//    TestProvider testProvider;
+//
+//    @Required
+//    public void setTestProvider(TestProvider testProvider) {
+//        this.testProvider = testProvider;
+//    }
+
     @Override
     protected void init(final VaadinRequest request) {
         setLocale(Locale.US);
@@ -55,7 +66,12 @@ public final class DashboardUI extends UI {
 
         updateContent();
 
-        new TestService();
+
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-web.xml");
+        TestProvider testProvider = context.getBean(TestProvider.class);
+        testProvider.test();
+
+//        testProvider.test();
 
 
         // Some views need to be aware of browser resize events so a

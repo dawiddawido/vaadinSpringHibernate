@@ -10,7 +10,8 @@
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> <!-- DB Driver -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://192.168.2.26:5432/eControlDB" /> <!-- BD Mane -->
+            <!--<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://192.168.2.26:5432/eControlDB" /> &lt;!&ndash; BD Mane &ndash;&gt;-->
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/eControlDB" /> <!-- BD Mane -->
             <property name="javax.persistence.jdbc.user" value="postgres" /> <!-- DB User -->
             <property name="javax.persistence.jdbc.password" value="postgres" /> <!-- DB Password -->
 
