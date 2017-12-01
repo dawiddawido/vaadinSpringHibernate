@@ -1,6 +1,7 @@
 package pl.cwik.dawid.services;
 
-import model.User;
+
+import pl.cwik.dawid.model.User;
 
 /**
  * Created by Dawid on 05.10.2017.
